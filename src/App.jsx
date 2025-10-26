@@ -1,12 +1,10 @@
 import React from 'react'
-
+import Hero from './sections/Hero'
 const App = () => {
   return (
-    <main>
-        <h1 className="text-4xl underline">
-            Welcome to my 3D portfolio!
-        </h1>
-    </main>
+    <>
+    <Hero />
+    </>
   )
 }
 
