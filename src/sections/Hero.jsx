@@ -1,9 +1,6 @@
 import React from "react";
+import { words } from "../constants";
 
-const words = [
-  { text: "ideas", imgPath: "/images/ideas.svg" },
-  { text: "concepts", imgPath: "/images/concepts.svg" },
-];
 
 const Hero = () => {
   return (
@@ -43,6 +40,9 @@ const Hero = () => {
               <h1 className="text-4xl font-bold">into Real Projects</h1>
               <h1 className="text-4xl font-bold">that Deliver Results</h1>
             </div>
+            <p className="text-white md:text-xl relative z-10 pointer-events-none">
+              Hi, i am ANKIT RAJ, a developer based in india with a passion for code.
+            </p>
           </div>
         </header>
 
