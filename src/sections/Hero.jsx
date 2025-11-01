@@ -1,4 +1,6 @@
 import React from "react";
+import Button from "../components/Button";
+import HeroExperience from "../components/HeroModels/HeroExperience";
 import { words } from "../constants";
 
 
@@ -43,10 +45,16 @@ const Hero = () => {
             <p className="text-white md:text-xl relative z-10 pointer-events-none">
               Hi, i am ANKIT RAJ, a developer based in india with a passion for code.
             </p>
+            <Button className='md:w-80 md:h-16 w-60 h-12' id="button" text="See my work"/>
           </div>
         </header>
 
-        {/* Right: 3D Model Placeholder */}
+        {/* Right: 3D Model Placeholder */} 
+        <figure>
+          <div className="hero-3d-layout">
+            <HeroExperience />
+          </div>
+        </figure>
       </div>
     </section>
   );
