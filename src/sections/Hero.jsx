@@ -3,7 +3,6 @@
 // import HeroExperience from "../components/HeroModels/HeroExperience";
 // import { words } from "../constants";
 
-
 // const Hero = () => {
 //   return (
 //     <section id="hero" className="relative overflow-hidden">
@@ -49,7 +48,7 @@
 //           </div>
 //         </header>
 
-//         {/* Right: 3D Model Placeholder */} 
+//         {/* Right: 3D Model Placeholder */}
 //         <figure>
 //           <div className="hero-3d-layout">
 //             <HeroExperience />
@@ -62,14 +61,33 @@
 
 // export default Hero;
 
-
 import React from "react";
 import Button from "../components/Button";
 import HeroExperience from "../components/HeroModels/HeroExperience";
 import { words } from "../constants";
 
+import { useGSAP } from "@gsap/react";
+import gsap from "gsap";
+import AnimatedCounter from "../components/AnimatedCounter";
+
 const Hero = () => {
   const base = import.meta.env.BASE_URL; // ✅ works in dev + production
+  useGSAP(() => {
+    gsap.fromTo(
+      ".hero-text h1",
+      {
+        y: 50,
+        opacity: 0,
+      },
+      {
+        y: 0,
+        opacity: 1,
+        stagger: 0.2,
+        duration: 1,
+        ease: "power2.inOut",
+      }
+    );
+  });
 
   return (
     <section id="hero" className="relative overflow-hidden">
@@ -109,9 +127,14 @@ const Hero = () => {
               <h1 className="text-4xl font-bold">that Deliver Results</h1>
             </div>
             <p className="text-white md:text-xl relative z-10 pointer-events-none">
-              Hi, I am ANKIT RAJ, a developer based in India with a passion for code.
+              Hi, I am ANKIT RAJ, a developer based in India with a passion for
+              code.
             </p>
-            <Button className="md:w-80 md:h-16 w-60 h-12" id="button" text="See my work" />
+            <Button
+              className="md:w-80 md:h-16 w-60 h-12"
+              id="button"
+              text="See my work"
+            />
           </div>
         </header>
 
@@ -122,9 +145,9 @@ const Hero = () => {
           </div>
         </figure>
       </div>
+      <AnimatedCounter />
     </section>
   );
 };
 
 export default Hero;
-
